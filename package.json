@@ -1,0 +1,25 @@
+{
+  "name": "mtg-card-list",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dev": "vite",
+    "reset": "node scripts/reset-catalog.mjs",
+    "import": "node scripts/import-cards.mjs",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@radix-ui/themes": "3.3.0",
+    "lucide-react": "1.70.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.2.1",
+    "vite": "8.3.6"
+  }
+}
