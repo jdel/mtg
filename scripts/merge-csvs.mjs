@@ -14,6 +14,7 @@ function escapeCsv(value) {
 async function mergeDirectory(directoryName) {
   const directory = path.join(projectRoot, directoryName);
   const outputPath = path.join(directory, "Cards.csv");
+  await rm(outputPath, { force: true });
   const inputPaths = (await readdir(directory))
     .filter((file) => file.toLowerCase().endsWith(".csv"))
     .sort()
