@@ -1,4 +1,4 @@
-const REQUIRED_COLUMNS = [
+export const REQUIRED_COLUMNS = [
   "Name",
   "Set code",
   "Collector number",

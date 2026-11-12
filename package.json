@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vite",
     "reset": "node scripts/reset-catalog.mjs",
+    "merge-csvs": "node scripts/merge-csvs.mjs",
     "import": "node scripts/import-cards.mjs",
     "build": "vite build"
   },

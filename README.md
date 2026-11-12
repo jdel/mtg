@@ -6,11 +6,19 @@ A static, searchable Magic: The Gathering card catalog built from ManaBox CSV ex
 
 1. Fork this repository on GitHub.
 2. In **Settings → Pages**, select **GitHub Actions** as the Pages source.
-3. In the fork, replace the CSV files in `import/` with your ManaBox exports, commit and push the changes to `master`
+3. In the fork, replace the CSV files in `import/` with your ManaBox exports
+4. Set your contact email in `public/config.json`
+5. Commit and push the changes to `master`
 
 The CSV exports are committed and therefore public. Do not include information you do not want visible in the repository.
 
 Each CSV needs only these columns: `Name`, `Set code`, `Collector number`, `Foil`, `Quantity`, `Scryfall ID`, and `Language`. Other ManaBox columns are optional and ignored.
+
+To merge all CSVs in `import/` with a single `Cards.csv` containing only the required columns, run:
+
+```sh
+npm run merge-csvs
+```
 
 ## Update the catalog
 
