@@ -276,6 +276,7 @@ button, input { font: inherit; }
 .copy-interest-label::before { content: "Copy list"; visibility: hidden; }
 
 @media (max-width: 899px) {
+  html { touch-action: pan-x pan-y; }
   .app-theme { width: 100%; min-width: 0; max-width: 100%; overflow-x: hidden; }
   .site-shell {
     width: calc(100% - 16px);
