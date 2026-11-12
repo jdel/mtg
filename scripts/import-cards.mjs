@@ -12,63 +12,81 @@ import {
 } from "./scryfall-images.mjs";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const importDirectory = path.join(projectRoot, "import");
-const outputPath = path.join(projectRoot, "public", "data", "cards.json");
 const imageDirectory = path.join(projectRoot, "public", "cards");
 const cacheKeyOnly = process.argv.includes("--cache-key");
-
+const requestedFiles = process.argv
+  .slice(2)
+  .filter((argument) => argument !== "--cache-key")
+  .map((file) => path.resolve(process.cwd(), file));
+const catalogSources = [
+  {
+    directory: path.join(projectRoot, "trading"),
+    label: "trading",
+    outputPath: path.join(projectRoot, "public", "data", "trading.json"),
+  },
+  {
+    directory: path.join(projectRoot, "searching"),
+    label: "searching",
+    outputPath: path.join(projectRoot, "public", "data", "searching.json"),
+  },
+];
 async function readCachedScryfallMetadata() {
-  try {
-    const cachedCards = JSON.parse(await readFile(outputPath, "utf8"));
-    return new Map(
-      cachedCards
-        .filter(
-          (card) =>
-            Object.hasOwn(card, "secondaryName") &&
-            Array.isArray(card.colors) &&
-            typeof card.typeLine === "string",
-        )
-        .map((card) => [
-          card.scryfallId,
-          {
-            secondaryName: card.secondaryName,
-            colors: card.colors,
-            typeLine: card.typeLine,
-          },
-        ]),
-    );
-  } catch (error) {
-    if (error.code === "ENOENT") return new Map();
-    throw error;
-  }
+  const cachedCatalogs = await Promise.all(
+    catalogSources.map(async ({ outputPath }) => {
+      try {
+        return JSON.parse(await readFile(outputPath, "utf8"));
+      } catch (error) {
+        if (error.code === "ENOENT") return [];
+        throw error;
+      }
+    }),
+  );
+
+  return new Map(
+    cachedCatalogs
+      .flat()
+      .filter(
+        (card) =>
+          Object.hasOwn(card, "secondaryName") &&
+          Array.isArray(card.colors) &&
+          typeof card.typeLine === "string",
+      )
+      .map((card) => [
+        card.scryfallId,
+        {
+          secondaryName: card.secondaryName,
+          colors: card.colors,
+          typeLine: card.typeLine,
+        },
+      ]),
+  );
 }
 
-async function findInputs() {
-  const requestedFiles = process.argv.slice(2).filter((argument) => argument !== "--cache-key");
-  if (requestedFiles.length > 0) {
-    return requestedFiles.map((file) => path.resolve(process.cwd(), file));
-  }
+async function readCatalog({ directory, label, outputPath }) {
+  const inputPaths = label === "trading" && requestedFiles.length > 0
+    ? requestedFiles
+    : (await readdir(directory, { withFileTypes: true }))
+      .filter((entry) => entry.isFile() && entry.name.toLowerCase().endsWith(".csv"))
+      .map((entry) => path.join(directory, entry.name))
+      .sort();
+  const parsedCatalogs = await Promise.all(
+    inputPaths.map(async (inputPath) => {
+      const source = await readFile(inputPath, "utf8");
+      return toCatalog(parseCsv(source));
+    }),
+  );
 
-  const csvFiles = (await readdir(importDirectory))
-    .filter((file) => file.toLowerCase().endsWith(".csv"))
-    .sort();
-
-  if (csvFiles.length === 0) {
-    console.warn("No CSV found in import/. Generating an empty catalog.");
-  }
-
-  return csvFiles.map((file) => path.join(importDirectory, file));
+  return {
+    cards: mergeCatalogs(parsedCatalogs.flat()),
+    inputCount: inputPaths.length,
+    label,
+    outputPath,
+  };
 }
 
-const inputPaths = await findInputs();
-const catalogs = await Promise.all(
-  inputPaths.map(async (inputPath) => {
-    const source = await readFile(inputPath, "utf8");
-    return toCatalog(parseCsv(source));
-  }),
-);
-const cards = mergeCatalogs(catalogs.flat());
-const scryfallIds = [...new Set(cards.map((card) => card.scryfallId))];
+const catalogs = await Promise.all(catalogSources.map(readCatalog));
+const allCards = catalogs.flatMap((catalog) => catalog.cards);
+const scryfallIds = [...new Set(allCards.map((card) => card.scryfallId))];
 
 if (cacheKeyOnly) {
   const cacheKey = createHash("sha256")
@@ -96,22 +114,27 @@ if (cacheKeyOnly) {
 
   await cacheMissingImages(missingImageIds, scryfallCards, imageDirectory);
   const staleImageCount = await removeStaleImages(scryfallIds, imageDirectory);
-  const cardsWithImages = cards.map((card) => {
-    const metadata = scryfallMetadata.get(card.scryfallId);
-    return {
-      ...card,
-      secondaryName: metadata.secondaryName,
-      colors: metadata.colors,
-      typeLine: metadata.typeLine,
-      image: `cards/${card.scryfallId}.webp`,
-    };
-  });
+  await Promise.all(
+    catalogs.map(async ({ cards, outputPath }) => {
+      const cardsWithImages = cards.map((card) => {
+        const metadata = scryfallMetadata.get(card.scryfallId);
+        return {
+          ...card,
+          secondaryName: metadata.secondaryName,
+          colors: metadata.colors,
+          typeLine: metadata.typeLine,
+          image: `cards/${card.scryfallId}.webp`,
+        };
+      });
 
-  await mkdir(path.dirname(outputPath), { recursive: true });
-  await writeFile(outputPath, `${JSON.stringify(cardsWithImages, null, 2)}\n`);
-
+      await mkdir(path.dirname(outputPath), { recursive: true });
+      await writeFile(outputPath, `${JSON.stringify(cardsWithImages, null, 2)}\n`);
+    }),
+  );
   console.log(
-    `Imported ${cards.length} catalog rows from ${inputPaths.length} CSV files; ` +
+    `Imported ${catalogs.map(({ cards, inputCount, label }) =>
+      `${cards.length} ${label} rows from ${inputCount} CSV file${inputCount === 1 ? "" : "s"}`
+    ).join(" and ")}; ` +
       `${missingImageIds.length} new images downloaded, ` +
       `${scryfallIds.length - missingImageIds.length} already cached; ` +
       `${staleImageCount} stale images removed; ` +

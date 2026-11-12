@@ -70,20 +70,31 @@ export function sortCards(cards, sort) {
   });
 }
 
-export function interestMessage(cards) {
-  const lines = cards.map(
+export function selectionMessage(interestedCards, offeredCards) {
+  const interestLines = interestedCards.map(
     (card) =>
       `- ${card.name} — ${card.setCode} #${card.collectorNumber}${card.foil ? " — FOIL" : ""} — available: ${card.quantity} — language: ${card.language.toUpperCase()}`,
   );
+  const offerLines = offeredCards.map(
+    (card) =>
+      `- ${card.name} — ${card.setCode} #${card.collectorNumber}${card.foil ? " — FOIL" : ""} — wanted: ${card.quantity} — language: ${card.language.toUpperCase()}`,
+  );
+  const sections = [];
+
+  if (interestLines.length > 0) {
+    sections.push("I'm interested in these cards:", "", ...interestLines);
+  }
+  if (offerLines.length > 0) {
+    if (sections.length > 0) sections.push("");
+    sections.push("I have these cards you're looking for:", "", ...offerLines);
+  }
 
   return [
     "Hi,",
     "",
-    "I'm interested in these cards:",
+    ...sections,
     "",
-    ...lines,
-    "",
-    "Please let me know if they are still available.",
+    "Let me know if you're interested.",
     "",
     "Thanks!",
   ].join("\n");

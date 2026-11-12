@@ -44,9 +44,9 @@ jobs:
       - name: Restore catalog metadata cache
         uses: actions/cache@v6
         with:
-          path: public/data/cards.json
-          key: card-catalog-v1-${{ steps.card-image-cache.outputs.key }}
-          restore-keys: card-catalog-v1-
+          path: public/data
+          key: card-catalog-v2-${{ steps.card-image-cache.outputs.key }}
+          restore-keys: card-catalog-v2-
 
       - name: Import catalog
         run: npm run import
