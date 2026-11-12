@@ -109,13 +109,22 @@ button, input { font: inherit; }
   gap: 12px;
 }
 
-.search-input {
+.search-controls {
+  display: flex;
+  min-width: 0;
+  max-width: 728px;
   flex: 1;
-  max-width: 680px;
+  align-items: stretch;
+  gap: 8px;
+}
+.search-input {
+  width: 100%;
+  flex: 1;
   min-height: 40px;
   border: 1px solid var(--gray-a7);
   background: var(--gray-2);
 }
+.multiple-search-trigger { flex: 0 0 auto; }
 
 .set-filter-input {
   min-width: 180px;
@@ -260,6 +269,9 @@ button, input { font: inherit; }
 .scroll-top-button { flex: 0 0 auto; color: var(--gray-11) !important; }
 
 .interest-dialog { min-width: 0; overflow-x: hidden; padding: 28px !important; }
+.multiple-search-dialog { min-width: 0; overflow-x: hidden; padding: 28px !important; }
+.multiple-search-description { display: grid; gap: 4px; }
+.multiple-search-input { width: 100%; min-height: 260px; margin-top: 20px; }
 .help-dialog { width: 100% !important; padding: 24px !important; }
 .help-dialog-copy { display: grid; gap: 16px; }
 .help-dialog-copy p { margin: 0; }
@@ -351,7 +363,9 @@ button, input { font: inherit; }
     grid-template-columns: minmax(0, 1fr);
     gap: 8px;
   }
-  .search-input { max-width: none; min-height: 36px; grid-column: 1 / -1; font-size: 13px; }
+  .search-controls { width: 100%; max-width: none; grid-column: 1 / -1; gap: 6px; }
+  .search-input { min-height: 36px; font-size: 13px; }
+  .multiple-search-trigger { width: 36px !important; height: 36px !important; }
   .set-filter-input { width: 100%; min-width: 0; height: 36px; min-height: 36px; font-size: 13px; }
   .mobile-select-row {
     display: grid;
@@ -480,6 +494,13 @@ button, input { font: inherit; }
   .interest-list { max-height: 48dvh; margin-top: 20px; }
   .interest-item p { overflow-wrap: anywhere; }
   .interest-actions > * { flex: 1 1 auto; }
+  .multiple-search-dialog {
+    width: 100% !important;
+    max-height: calc(100dvh - 24px);
+    padding: 24px 20px !important;
+  }
+  .multiple-search-input { min-height: 42dvh; }
+  .multiple-search-actions > * { flex: 1 1 auto; }
   .rt-BaseDialogScroll:has(.help-dialog) { overflow: hidden; }
   .help-dialog {
     padding: 20px !important;

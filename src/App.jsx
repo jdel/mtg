@@ -5,7 +5,14 @@ import CardResults from "./components/CardResults.jsx";
 import CatalogHeader from "./components/CatalogHeader.jsx";
 import CatalogToolbar from "./components/CatalogToolbar.jsx";
 import SiteFooter from "./components/SiteFooter.jsx";
-import { cardKey, matchesSearch, selectionMessage, sortCards } from "./lib/catalog.js";
+import {
+  cardKey,
+  matchesMultipleSearch,
+  matchesSearch,
+  parseMultipleSearch,
+  selectionMessage,
+  sortCards,
+} from "./lib/catalog.js";
 
 const TRADING_CATALOG_URL = `${import.meta.env.BASE_URL}data/trading.json`;
 const SEARCHING_CATALOG_URL = `${import.meta.env.BASE_URL}data/searching.json`;
@@ -130,6 +137,8 @@ function Catalog({ email, searchingCards, tradingCards }) {
   const [appearance, setAppearance] = useState(preferredAppearance);
   const [catalogMode, setCatalogMode] = useState("trading");
   const [query, setQuery] = useState("");
+  const [multipleSearchText, setMultipleSearchText] = useState("");
+  const [multipleSearchQueries, setMultipleSearchQueries] = useState(null);
   const [setFilter, setSetFilter] = useState("");
   const [foilOnly, setFoilOnly] = useState(false);
   const [cardFilters, setCardFilters] = useState(new Set());
@@ -152,6 +161,7 @@ function Catalog({ email, searchingCards, tradingCards }) {
   const selected = isSearching ? searchingSelection : tradingSelection;
   const setSelected = isSearching ? setSearchingSelection : setTradingSelection;
   const setCodes = useMemo(() => [...new Set(cards.map((card) => card.setCode))].sort(), [cards]);
+  const activeMultipleSearchQueries = isSearching ? null : multipleSearchQueries;
   const accentColor = isSearching ? "orange" : "grass";
   const selectionBadgeLabel = isSearching ? "Got it" : "Interested";
   const selectionListName = isSearching ? "cards I can offer" : "interest list";
@@ -198,7 +208,8 @@ function Catalog({ email, searchingCards, tradingCards }) {
     () => sortCards(
       cards.filter(
         (card) =>
-          matchesSearch(card, query) &&
+          matchesSearch(card, query, setCodes) &&
+          matchesMultipleSearch(card, activeMultipleSearchQueries, setCodes) &&
           card.setCode.includes(setFilter.trim().toUpperCase()) &&
           (!foilOnly || card.foil) &&
           [...cardFilters].every((filter) => {
@@ -209,11 +220,14 @@ function Catalog({ email, searchingCards, tradingCards }) {
       ),
       sort,
     ),
-    [cardFilters, cards, foilOnly, query, setFilter, sort],
+    [activeMultipleSearchQueries, cardFilters, cards, foilOnly, query, setCodes, setFilter, sort],
   );
   const resultKey = [
     catalogMode,
     query,
+    activeMultipleSearchQueries === null
+      ? "multiple-inactive"
+      : `multiple:${activeMultipleSearchQueries.join(",")}`,
     setFilter,
     foilOnly,
     [...cardFilters].sort().join(","),
@@ -294,8 +308,28 @@ function Catalog({ email, searchingCards, tradingCards }) {
     });
   }
 
+  function changeQuery(nextQuery) {
+    setQuery(nextQuery);
+    if (nextQuery) {
+      setMultipleSearchText("");
+      setMultipleSearchQueries(null);
+    }
+  }
+
+  function applyMultipleSearch(value) {
+    setQuery("");
+    setMultipleSearchText(value);
+    setMultipleSearchQueries(parseMultipleSearch(value, tradingCards));
+  }
+
+  function clearMultipleSearch() {
+    setMultipleSearchText("");
+    setMultipleSearchQueries(null);
+  }
+
   function clearFilters() {
     setQuery("");
+    clearMultipleSearch();
     setSetFilter("");
     setFoilOnly(false);
     setCardFilters(new Set());
@@ -386,14 +420,19 @@ function Catalog({ email, searchingCards, tradingCards }) {
               foilOnly={foilOnly}
               onCardFilterToggle={toggleCardFilter}
               onFoilToggle={() => setFoilOnly((current) => !current)}
-              onQueryChange={setQuery}
+              onMultipleSearchApply={applyMultipleSearch}
+              onMultipleSearchClear={clearMultipleSearch}
+              onQueryChange={changeQuery}
               onSetFilterChange={setSetFilter}
               onSortColumnChange={changeSortColumn}
               onSortDirectionToggle={() => toggleSort(sort.column)}
               query={query}
               setCodes={setCodes}
               setFilter={setFilter}
+              showMultipleSearch={!isSearching}
               sort={sort}
+              multipleSearchActive={multipleSearchQueries !== null}
+              multipleSearchText={multipleSearchText}
             />
             <CardResults
               cards={renderedCards}

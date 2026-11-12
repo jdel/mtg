@@ -30,7 +30,26 @@ export function cardKey(card) {
   return JSON.stringify([card.name, card.setCode, card.collectorNumber, card.foil, card.language]);
 }
 
-export function matchesSearch(card, query) {
+function parseCardReference(query, setCodes) {
+  const compactQuery = normalizeText(query).replace(/\s+/g, "");
+  const normalizedSetCodes = setCodes
+    .map((setCode) => normalizeText(setCode).replace(/\s+/g, ""))
+    .filter(Boolean)
+    .sort((first, second) => second.length - first.length);
+
+  for (const setCode of normalizedSetCodes) {
+    if (!compactQuery.startsWith(setCode)) continue;
+
+    const collectorNumber = compactQuery.slice(setCode.length);
+    if (/^\d+[a-z]?$/.test(collectorNumber)) {
+      return { setCode, collectorNumber: normalizeCollector(collectorNumber) };
+    }
+  }
+
+  return null;
+}
+
+export function matchesSearch(card, query, setCodes = []) {
   const terms = normalizeText(query).split(" ").filter(Boolean);
   if (terms.length === 0) return true;
 
@@ -39,6 +58,11 @@ export function matchesSearch(card, query) {
   const setCode = normalizeText(card.setCode);
   const collectorNumber = normalizeCollector(card.collectorNumber);
   const combinedCode = `${setCode}${collectorNumber}`;
+  const cardReference = parseCardReference(query, setCodes);
+
+  if (cardReference) {
+    return setCode === cardReference.setCode && collectorNumber === cardReference.collectorNumber;
+  }
 
   return terms.every((term) => {
     const normalizedTerm = normalizeCodeTerm(term);
@@ -50,6 +74,34 @@ export function matchesSearch(card, query) {
       combinedCode.includes(normalizedTerm)
     );
   });
+}
+
+export function parseMultipleSearch(value, cards) {
+  const knownNames = [...new Map(
+    cards.map((card) => [normalizeText(card.name), card.name]),
+  ).entries()]
+    .filter(([normalizedName]) => normalizedName)
+    .sort((first, second) => second[0].length - first[0].length);
+  const queries = new Map();
+
+  for (const line of String(value).split(/\r?\n/)) {
+    const withoutQuantity = line.replace(/^\s*\d+\s*x(?:\s+|$)/i, "");
+    const normalizedLine = normalizeText(withoutQuantity);
+    if (!normalizedLine) continue;
+
+    const knownName = knownNames.find(
+      ([normalizedName]) =>
+        normalizedLine === normalizedName || normalizedLine.startsWith(`${normalizedName} `),
+    );
+    const query = knownName ? knownName[1] : withoutQuantity.trim();
+    queries.set(normalizeText(query), query);
+  }
+
+  return [...queries.values()];
+}
+
+export function matchesMultipleSearch(card, queries, setCodes) {
+  return queries === null || queries.some((query) => matchesSearch(card, query, setCodes));
 }
 
 export function sortCards(cards, sort) {

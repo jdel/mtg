@@ -1,6 +1,7 @@
 import { Flex, IconButton, Select, TextField } from "@radix-ui/themes";
 import { ArrowDown, ArrowUp, Cog, ListFilter, Mountain, Search, X } from "lucide-react";
 import { SORT_COLUMNS } from "../lib/catalog.js";
+import MultipleSearchDialog from "./MultipleSearchDialog.jsx";
 
 const COLOR_FILTERS = [
   { value: "W", label: "White" },
@@ -19,6 +20,8 @@ export default function CatalogToolbar({
   foilOnly,
   onCardFilterToggle,
   onFoilToggle,
+  onMultipleSearchApply,
+  onMultipleSearchClear,
   onQueryChange,
   onSetFilterChange,
   onSortColumnChange,
@@ -26,36 +29,49 @@ export default function CatalogToolbar({
   query,
   setCodes,
   setFilter,
+  showMultipleSearch,
   sort,
+  multipleSearchActive,
+  multipleSearchText,
 }) {
   return (
     <Flex align="end" className="catalog-toolbar" gap="4" justify="between" wrap="wrap">
       <div className="filters">
-        <TextField.Root
-          aria-label="Search cards"
-          className="search-input"
-          onChange={(event) => onQueryChange(event.target.value)}
-          placeholder="Search name or card number, e.g. TRK 110"
-          size="3"
-          value={query}
-        >
-          <TextField.Slot><Search aria-hidden="true" size={20} /></TextField.Slot>
-          {query && (
-            <TextField.Slot side="right">
-              <IconButton
-                aria-label="Clear search"
-                color="gray"
-                onClick={() => onQueryChange("")}
-                size="1"
-                title="Clear search"
-                type="button"
-                variant="ghost"
-              >
-                <X aria-hidden="true" size={16} />
-              </IconButton>
-            </TextField.Slot>
+        <div className="search-controls">
+          <TextField.Root
+            aria-label="Search cards"
+            className="search-input"
+            onChange={(event) => onQueryChange(event.target.value)}
+            placeholder="Search name or card number, e.g. TRK 110"
+            size="3"
+            value={query}
+          >
+            <TextField.Slot><Search aria-hidden="true" size={20} /></TextField.Slot>
+            {query && (
+              <TextField.Slot side="right">
+                <IconButton
+                  aria-label="Clear search"
+                  color="gray"
+                  onClick={() => onQueryChange("")}
+                  size="1"
+                  title="Clear search"
+                  type="button"
+                  variant="ghost"
+                >
+                  <X aria-hidden="true" size={16} />
+                </IconButton>
+              </TextField.Slot>
+            )}
+          </TextField.Root>
+          {showMultipleSearch && (
+            <MultipleSearchDialog
+              active={multipleSearchActive}
+              onApply={onMultipleSearchApply}
+              onClear={onMultipleSearchClear}
+              value={multipleSearchText}
+            />
           )}
-        </TextField.Root>
+        </div>
 
         <div className="mobile-select-row">
           <TextField.Root
