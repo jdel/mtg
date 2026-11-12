@@ -28,6 +28,8 @@ Add, replace, or remove CSV files in `trading/` and `searching/`, commit the cha
 
 After the GitHub actions has finished running, the page will be available at https://<username>.github.io/mtg (or whatever name you decided for your fork)
 
+The Searching view is available directly at https://<username>.github.io/mtg/searching/
+
 ## Local development
 
 Local development requires Node.js 20.19 or newer on Node 20, or Node.js 22.12 or newer. After cloning the repository, run:

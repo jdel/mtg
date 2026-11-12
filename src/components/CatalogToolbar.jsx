@@ -1,5 +1,6 @@
 import { Flex, IconButton, Select, TextField } from "@radix-ui/themes";
 import { ArrowDown, ArrowUp, Cog, ListFilter, Mountain, Search, X } from "lucide-react";
+import { APP_BASE_URL } from "../lib/app.js";
 import { SORT_COLUMNS } from "../lib/catalog.js";
 import MultipleSearchDialog from "./MultipleSearchDialog.jsx";
 
@@ -143,7 +144,7 @@ export default function CatalogToolbar({
                   alt=""
                   aria-hidden="true"
                   className="filter-symbol"
-                  src={`${import.meta.env.BASE_URL}symbols/${value}.svg`}
+                  src={`${APP_BASE_URL}symbols/${value}.svg`}
                 />
               </IconButton>
             ))}
@@ -174,7 +175,7 @@ export default function CatalogToolbar({
                 alt=""
                 aria-hidden="true"
                 className="filter-foil-icon"
-                src={`${import.meta.env.BASE_URL}symbols/foil.png`}
+                src={`${APP_BASE_URL}symbols/foil.png`}
               />
             </button>
           </div>

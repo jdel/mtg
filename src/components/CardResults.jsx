@@ -1,5 +1,6 @@
 import { Badge, Button, Heading, IconButton, Table, Text } from "@radix-ui/themes";
 import { Eye, Search } from "lucide-react";
+import { APP_BASE_URL } from "../lib/app.js";
 import { SORT_COLUMNS, cardKey } from "../lib/catalog.js";
 import SortButton from "./SortButton.jsx";
 
@@ -166,7 +167,7 @@ function CardTitle({ card, mobile = false }) {
           <img
             alt="Foil"
             className="foil-icon"
-            src={`${import.meta.env.BASE_URL}symbols/foil.png`}
+            src={`${APP_BASE_URL}symbols/foil.png`}
             title="Foil"
           />
         )}

@@ -14,10 +14,11 @@ import {
   selectionMessage,
   sortCards,
 } from "./lib/catalog.js";
+import { APP_BASE_URL } from "./lib/app.js";
 
-const TRADING_CATALOG_URL = `${import.meta.env.BASE_URL}data/trading.json`;
-const SEARCHING_CATALOG_URL = `${import.meta.env.BASE_URL}data/searching.json`;
-const CONFIG_URL = `${import.meta.env.BASE_URL}config.json`;
+const TRADING_CATALOG_URL = `${APP_BASE_URL}data/trading.json`;
+const SEARCHING_CATALOG_URL = `${APP_BASE_URL}data/searching.json`;
+const CONFIG_URL = `${APP_BASE_URL}config.json`;
 const THEME_STORAGE_KEY = "mtg-card-list-theme";
 const TRADING_SELECTION_STORAGE_KEY = "mtg-card-list-trading-selection";
 const SEARCHING_SELECTION_STORAGE_KEY = "mtg-card-list-searching-selection";
@@ -136,7 +137,9 @@ function Catalog({ email, searchingCards, tradingCards }) {
   const tradingCardKeys = useMemo(() => new Set(tradingCards.map(cardKey)), [tradingCards]);
   const searchingCardKeys = useMemo(() => new Set(searchingCards.map(cardKey)), [searchingCards]);
   const [appearance, setAppearance] = useState(preferredAppearance);
-  const [catalogMode, setCatalogMode] = useState("trading");
+  const [catalogMode, setCatalogMode] = useState(
+    () => document.body.dataset.catalogMode ?? "trading",
+  );
   const [query, setQuery] = useState("");
   const [multipleSearchText, setMultipleSearchText] = useState("");
   const [multipleSearchQueries, setMultipleSearchQueries] = useState(null);
@@ -508,7 +511,7 @@ function Catalog({ email, searchingCards, tradingCards }) {
           <img
             alt=""
             height={PREVIEW_HEIGHT}
-            src={`${import.meta.env.BASE_URL}${preview.card.image}`}
+            src={`${APP_BASE_URL}${preview.card.image}`}
             width={PREVIEW_WIDTH}
           />
         </div>

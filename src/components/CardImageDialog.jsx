@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Badge, Dialog, Heading, Text } from "@radix-ui/themes";
+import { APP_BASE_URL } from "../lib/app.js";
 
 const CARD_CAROUSEL_GAP = 24;
 const TAP_MOVE_THRESHOLD = 8;
@@ -167,7 +168,7 @@ export default function CardImageDialog({
               alt={`${card.name} card`}
               className="card-image-dialog-image"
               draggable="false"
-              src={`${import.meta.env.BASE_URL}${card.image}`}
+              src={`${APP_BASE_URL}${card.image}`}
             />
           </button>
         </Dialog.Content>
@@ -190,7 +191,7 @@ function CardImageDialogNeighbor({ accentColor, card, isAdded, position, selecti
         alt=""
         className="card-image-dialog-neighbor-image"
         draggable="false"
-        src={`${import.meta.env.BASE_URL}${card.image}`}
+        src={`${APP_BASE_URL}${card.image}`}
       />
     </div>
   );
@@ -207,7 +208,7 @@ function CardImageDialogMeta({ card }) {
         <img
           alt="Foil"
           className="foil-icon"
-          src={`${import.meta.env.BASE_URL}symbols/foil.png`}
+          src={`${APP_BASE_URL}symbols/foil.png`}
           title="Foil"
         />
       )}
