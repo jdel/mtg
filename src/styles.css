@@ -275,6 +275,48 @@ button, input { font: inherit; }
 .help-dialog { width: 100% !important; padding: 24px !important; }
 .help-dialog-copy { display: grid; gap: 16px; }
 .help-dialog-copy p { margin: 0; }
+.guided-tour-layer {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  pointer-events: none;
+}
+.guided-tour-shade {
+  position: fixed;
+  background: rgba(8, 12, 10, 0.7);
+  pointer-events: auto;
+  touch-action: none;
+}
+.guided-tour-shade-full { inset: 0; }
+.guided-tour-highlight {
+  position: fixed;
+  border: 2px solid var(--accent-9);
+  border-radius: 10px;
+  box-shadow: 0 0 0 3px var(--accent-a5), 0 8px 30px rgba(0, 0, 0, 0.28);
+}
+.guided-tour-target-blocker {
+  position: fixed;
+  pointer-events: auto;
+  touch-action: none;
+}
+.guided-tour-popover {
+  position: fixed;
+  z-index: 1;
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid var(--gray-a6);
+  border-radius: 14px;
+  background: var(--color-panel-solid);
+  box-shadow: var(--shadow-6);
+  pointer-events: auto;
+}
+.guided-tour-progress,
+.guided-tour-title,
+.guided-tour-description { margin: 0; }
+.guided-tour-progress { text-transform: uppercase; letter-spacing: 0.08em; }
+.guided-tour-title { margin-top: 6px; }
+.guided-tour-description { margin-top: 8px; line-height: 1.5; }
 .interest-list {
   display: grid;
   width: 100%;
@@ -501,6 +543,7 @@ button, input { font: inherit; }
   }
   .multiple-search-input { min-height: 42dvh; }
   .multiple-search-actions > * { flex: 1 1 auto; }
+  .guided-tour-popover { padding: 18px; }
   .rt-BaseDialogScroll:has(.help-dialog) { overflow: hidden; }
   .help-dialog {
     padding: 20px !important;

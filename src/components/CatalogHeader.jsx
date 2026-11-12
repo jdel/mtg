@@ -16,6 +16,7 @@ export default function CatalogHeader({
   onClearSelection,
   onModeChange,
   onRemoveMessageCard,
+  onStartTour,
   onToggleAppearance,
   offeredCards,
   selectionListName,
@@ -28,6 +29,7 @@ export default function CatalogHeader({
           aria-label={`Switch to ${isSearching ? "Trading" : "Searching"}`}
           className="catalog-mode-toggle"
           color={accentColor}
+          data-tour="mode-toggle"
           onClick={onModeChange}
           size="3"
         >
@@ -58,7 +60,7 @@ export default function CatalogHeader({
             onRemove={onRemoveMessageCard}
             offeredCards={offeredCards}
           />
-          <HelpDialog />
+          <HelpDialog onStartTour={onStartTour} />
           <IconButton
             aria-label={`Switch to ${appearance === "dark" ? "light" : "dark"} theme`}
             color="gray"

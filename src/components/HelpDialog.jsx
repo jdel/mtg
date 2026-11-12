@@ -1,15 +1,20 @@
 import { useState } from "react";
-import { Dialog, IconButton } from "@radix-ui/themes";
+import { Button, Dialog, Flex, IconButton } from "@radix-ui/themes";
 import { CircleHelp } from "lucide-react";
 import useSwipeDismiss from "../hooks/useSwipeDismiss.js";
 
-export default function HelpDialog() {
+export default function HelpDialog({ onStartTour }) {
   const [open, setOpen] = useState(false);
   const { dragY, isDragging, resetDrag, swipeHandlers } = useSwipeDismiss(() => setOpen(false));
 
   function changeOpen(nextOpen) {
     if (nextOpen) resetDrag();
     setOpen(nextOpen);
+  }
+
+  function startTour() {
+    changeOpen(false);
+    onStartTour();
   }
 
   return (
@@ -41,6 +46,9 @@ export default function HelpDialog() {
             preferred channel.
           </p>
         </Dialog.Description>
+        <Flex justify="end" mt="5">
+          <Button onClick={startTour} type="button">Start guided tour</Button>
+        </Flex>
       </Dialog.Content>
     </Dialog.Root>
   );

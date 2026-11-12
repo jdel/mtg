@@ -4,6 +4,7 @@ import CardImageDialog from "./components/CardImageDialog.jsx";
 import CardResults from "./components/CardResults.jsx";
 import CatalogHeader from "./components/CatalogHeader.jsx";
 import CatalogToolbar from "./components/CatalogToolbar.jsx";
+import GuidedTour from "./components/GuidedTour.jsx";
 import SiteFooter from "./components/SiteFooter.jsx";
 import {
   cardKey,
@@ -154,6 +155,7 @@ function Catalog({ email, searchingCards, tradingCards }) {
   const [imagePreviewCard, setImagePreviewCard] = useState(null);
   const [isMobile, setIsMobile] = useState(isMobileViewport);
   const [loadedResults, setLoadedResults] = useState({ key: "", count: RESULT_BATCH_SIZE });
+  const [tour, setTour] = useState(null);
   const loadMoreRef = useRef(null);
 
   const isSearching = catalogMode === "searching";
@@ -335,6 +337,53 @@ function Catalog({ email, searchingCards, tradingCards }) {
     setCardFilters(new Set());
   }
 
+  function startTour() {
+    setTour({
+      stepIndex: 0,
+      snapshot: {
+        cardFilters: new Set(cardFilters),
+        catalogMode,
+        foilOnly,
+        loadedResults,
+        multipleSearchQueries,
+        multipleSearchText,
+        query,
+        setFilter,
+      },
+    });
+    setCatalogMode("trading");
+    setQuery("");
+    setMultipleSearchText("");
+    setMultipleSearchQueries(null);
+    setSetFilter("");
+    setFoilOnly(false);
+    setCardFilters(new Set());
+    setLoadedResults({ key: "", count: RESULT_BATCH_SIZE });
+    setPreview(null);
+    setImagePreviewCard(null);
+  }
+
+  function endTour() {
+    if (!tour) return;
+
+    const { snapshot } = tour;
+    setCatalogMode(snapshot.catalogMode);
+    setQuery(snapshot.query);
+    setMultipleSearchText(snapshot.multipleSearchText);
+    setMultipleSearchQueries(snapshot.multipleSearchQueries);
+    setSetFilter(snapshot.setFilter);
+    setFoilOnly(snapshot.foilOnly);
+    setCardFilters(snapshot.cardFilters);
+    setLoadedResults(snapshot.loadedResults);
+    setTour(null);
+  }
+
+  function advanceTour() {
+    if (!tour) return;
+    if (tour.stepIndex === 3) setCatalogMode("searching");
+    setTour({ ...tour, stepIndex: tour.stepIndex + 1 });
+  }
+
   function toggleAppearance() {
     setAppearance((current) => {
       const next = current === "dark" ? "light" : "dark";
@@ -406,6 +455,7 @@ function Catalog({ email, searchingCards, tradingCards }) {
         onClearSelection={() => setSelected(new Set())}
         onModeChange={() => setCatalogMode(isSearching ? "trading" : "searching")}
         onRemoveMessageCard={removeMessageCard}
+        onStartTour={startTour}
         onToggleAppearance={toggleAppearance}
         offeredCards={offeredCards}
         selectionListName={selectionListName}
@@ -485,6 +535,14 @@ function Catalog({ email, searchingCards, tradingCards }) {
         selectionBadgeLabel={selectionBadgeLabel}
         selectionListName={selectionListName}
       />
+      {tour && (
+        <GuidedTour
+          onCancel={endTour}
+          onFinish={endTour}
+          onNext={advanceTour}
+          stepIndex={tour.stepIndex}
+        />
+      )}
     </Theme>
   );
 }

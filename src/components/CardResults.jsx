@@ -59,7 +59,12 @@ function MobileCardList({ cards, onPreviewOpen, onSelect, selected }) {
         const key = cardKey(card);
         const isSelected = selected.has(key);
         return (
-          <div className={`mobile-card${isSelected ? " selected-card" : ""}`} key={key} role="listitem">
+          <div
+            className={`mobile-card${isSelected ? " selected-card" : ""}`}
+            data-tour="card-row"
+            key={key}
+            role="listitem"
+          >
             <IconButton
               aria-label={`View image of ${card.name}`}
               className="mobile-card-image-button"
@@ -121,6 +126,7 @@ function DesktopCardTable({ cards, onPreviewClose, onPreviewMove, onSelect, onSo
               <Table.Row
                 aria-selected={isSelected}
                 className={isSelected ? "selected-row" : undefined}
+                data-tour="card-row"
                 key={key}
                 onClick={() => onSelect(card, !isSelected)}
                 onKeyDown={(event) => {

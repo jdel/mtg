@@ -41,6 +41,7 @@ export default function CatalogToolbar({
           <TextField.Root
             aria-label="Search cards"
             className="search-input"
+            data-tour="search"
             onChange={(event) => onQueryChange(event.target.value)}
             placeholder="Search name or card number, e.g. TRK 110"
             size="3"

@@ -35,6 +35,7 @@ export default function MultipleSearchDialog({ active, onApply, onClear, value }
           aria-pressed={active}
           className="multiple-search-trigger"
           color={active ? undefined : "gray"}
+          data-tour="multiple-search"
           highContrast={!active}
           size="3"
           title={active ? "Edit multiple search" : "Multiple search"}

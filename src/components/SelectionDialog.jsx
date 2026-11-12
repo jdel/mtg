@@ -34,6 +34,7 @@ export default function SelectionDialog({
         <Button
           aria-label={`Review message about ${selectedCount} selected card${selectedCount === 1 ? "" : "s"}`}
           className="interest-trigger"
+          data-tour="message"
           disabled={selectedCount === 0}
           size="3"
         >
