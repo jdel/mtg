@@ -48,7 +48,6 @@ Axgard Cavalry,KHM,121,normal,4,2411c341-a470-4484-9248-7c1d3ca12978,en
 "Ayli, Eternal Pilgrim",OGW,151,normal,1,e7b5893d-6df6-4cae-ae70-d02d443d1740,en
 Azorius Cluestone,DGM,136,normal,1,09eeb301-bc28-4515-ad69-0b1b5164a5bc,en
 Azorius First-Wing,DIS,105,normal,2,b675c1e6-add5-4959-a5be-f2571ccebcb4,en
-"Balamb Garden, SeeD Academy // Balamb Garden, Airborne",FIN,272,normal,1,001e9f20-5b15-41cb-bf82-46172decc235,en
 Balamb T-Rexaur,FIN,173,normal,1,e5857b1b-73bc-458e-b26b-7ed8bef785f3,en
 Balthier and Fran,FIN,213,normal,1,afcaed7d-7ea3-4f2a-a7f5-ee3315226369,en
 Bane of Bala Ged,BFZ,1,normal,1,3741e62a-4b86-46ff-a7df-a8ceaf3b9a0c,en
@@ -80,7 +79,6 @@ Blazing Crescendo,MSH,125,normal,3,8447c3d6-8c65-4d3c-81c4-609801602d06,en
 Blazing Crescendo,FRA,75,normal,3,8414a98c-0c79-4884-bc9b-061a6456b392,en
 Blessed Ghoul,FRA,123,normal,2,bb975803-9bf2-401e-9414-d272df314398,en
 Blightspeaker,PLC,64,normal,4,4ae24bc0-1217-4db9-a745-8860f23b6d57,en
-Blitzball,FIN,254,normal,1,92f4ad73-42bf-45c0-8bb6-0b44043c81ef,en
 Blitzball Shot,FIN,176,normal,3,ec8ab637-3d7d-4712-9f83-8920f808f715,en
 Blossom-Blessed Angel // Seed Suture,FRA,3,normal,3,5e77fbf0-9d1f-4e7d-a02e-43065d11b0d9,en
 Bold Biochemist,MSH,48,normal,1,10644127-3da0-484e-9afc-de26d9c34390,en
@@ -89,14 +87,12 @@ Bone Saw,OGW,161,normal,1,dc3d19ff-b618-4b07-99a8-ea6e7ee72459,en
 Boreal Shelf,CSP,144,normal,1,3f2f8396-72ab-4387-9276-987836427107,en
 Bothersome Noisemaker,HOB,89,foil,2,cb25b11a-6bf5-4a9a-b60f-d4dcac3816d6,en
 Boughside Wanderers,HOB,121,normal,2,71bec005-2925-4944-be16-2cc5eb30f5d6,en
-"Brad Boimler, Eager Ensign",TRK,5,normal,1,a6bf1525-2212-46d0-ad4d-1dbaa2e3b3cd,en
 Brave Brawler,MSH,8,normal,1,2242b5c3-42ef-4be0-a61f-65c93e56fcab,en
 Budding Insurgent,FRA,99,normal,2,18c59d60-2640-4576-9375-3ba38aa3ecb7,en
-Buried Alive,ODY,118,normal,1,7db3697e-a31b-45a5-b742-fdfb00ce3929,en
 Buried Alive,WTH,63,normal,2,56b92eb5-72b0-46b4-8b16-8a7a7ac80f56,en
 "Burn, Burn, Tree and Fern",HOB,90,normal,1,fceb1a2d-121e-49ad-acf2-1bb5aebec116,en
 Burning-Tree Bloodscale,GPT,104,normal,4,c6492648-8115-41ff-a184-08efebae28b1,en
-Cabal Coffers,TOR,139,normal,2,2b934c78-258e-4b1e-9783-ec9f734e8776,en
+Cabal Coffers,TOR,139,normal,2,2b934c78-258e-4b1e-9783-ec9f734e8776,fr
 Cactuar,FIN,177,normal,1,d5273db4-6214-41e4-825a-612fca8bbe03,en
 Calamity Bearer,KHM,125,normal,1,a15edad1-ff68-4f20-95f6-99fe549bea98,en
 Calciderm,PLC,23,normal,3,f0159719-ccf4-4798-a394-b01f5e422a27,en
@@ -104,7 +100,6 @@ Calciderm,PLC,23,foil,1,f0159719-ccf4-4798-a394-b01f5e422a27,en
 Call Damage Control,MSH,162,normal,1,de1ed886-c33b-4cfd-8442-944cec654a8b,en
 Cantankerous Captain,TRK,141,normal,1,2c053ec5-d1ea-4526-8a0d-e4dfafb8ecdf,en
 Captain Jonathan Archer,TRK,186,normal,1,a4518ea3-5f56-4f1d-9024-2bf06ac98786,en
-Captain Sisay,SDS,22,normal,1,ed9010d9-3ebc-4374-b7d0-56660fbc49a2,en
 Captain's Claws,OGW,162,normal,1,521ee576-5a51-4353-af38-c461f05d66ce,en
 Captain's Tutelage,TRK,144,normal,1,0c340eba-645d-416a-9ed4-f2303aa8c919,en
 Carnivorous Cultivator // Enroot,FRA,437,foil,1,e9e31f13-8a2c-4ae2-854e-27d6c62936f2,en
@@ -127,7 +122,6 @@ Chocobo Racetrack,FIN,179,normal,1,1565813b-6912-42f4-bae0-22136a2d6a92,en
 "Cid, Timeless Artificer",FIN,415,normal,1,b6776f23-5f5b-4f0a-a00c-1ca8f03ffc5f,en
 "Cid, Timeless Artificer",FIN,409,normal,1,2bbab097-acb3-480d-a433-e4f81dde62e4,en
 Cinder Barrens,AKH,280,normal,4,e12fa835-c13d-4d73-9d26-97bc2268e971,en
-Class-F Shuttlecraft,TRK,259,normal,1,55e0a183-4145-472f-8bed-a1f247febe06,en
 Cleaving Reaper,KHM,376,normal,1,b59dadef-74e5-47c7-a3e0-51075ddb82b1,en
 Cloud of Darkness,FIN,217,normal,1,a292094a-674a-401f-8776-ba5ebe57c946,en
 Cloudbound Moogle,FIN,11,normal,2,7387bca7-f496-45da-a0ac-6be049303a8f,en
@@ -163,7 +157,6 @@ Crystal Fragments // Summon: Alexander,FIN,357,foil,1,c2416ecc-bb6b-44f6-8fa6-61
 Crystalline Entity,TRK,261,normal,1,cbc4ac70-0a4c-4973-a366-dd67d8901e21,en
 "Culber and Stamets, Star-Crossed",TRK,191,normal,1,962752f7-5c94-41e4-ab7d-3e8741c7a502,en
 Culling Drone,BFZ,91,normal,2,1a623415-46c0-45aa-ab75-1e2d9708013a,en
-Cultivate,PW23,6,foil,1,96701694-eeff-42de-b1c7-84420ba0c198,en
 Cultivator Drone,OGW,42,normal,1,bbe4bb6f-bec6-49d2-99d7-e3750a0ea03f,en
 Cunning Breezedancer,DTK,215,normal,1,bdbfe3b0-3b1d-4b0c-9d98-07f1cecce4b7,en
 Curse of Chains,SHM,139,normal,1,5db21bcb-60e8-4d15-8ea7-7298c2b1607c,en
@@ -187,7 +180,7 @@ Decoy Ploy,MSH,94,normal,2,d8719b74-48ef-4f68-b59a-949edd644ddc,en
 Dedicated Commons,FRA,175,normal,1,3223e5db-5cc4-42f9-ae9e-ff58abc7c390,en
 Delivery Moogle,FIN,15,foil,1,f58840dc-c641-4092-8b67-9c0d449af715,en
 Delivery Moogle,FIN,15,normal,1,f58840dc-c641-4092-8b67-9c0d449af715,en
-Demonic Tutor,FWB,105,normal,2,52005693-ade2-4359-b561-d7faae1ce80f,en
+Demonic Tutor,FWB,105,normal,2,52005693-ade2-4359-b561-d7faae1ce80f,fr
 Dependable Quinjet,MSH,246,normal,2,c035c625-4de5-4c3b-9d07-aa1df8fc7b78,en
 Depower,MSH,50,normal,2,36e9a6e9-1f9d-4860-97ee-f01e66f8eb4d,en
 Deputy of Acquittals,DGM,65,normal,4,4b555888-21b1-4c45-966d-d98f32460d4e,en
@@ -203,7 +196,6 @@ Divining Duelist,FRA,29,normal,3,960c7335-331d-488b-be68-2ad1c1c695dc,en
 Dominator Drone,BFZ,92,normal,2,12e7e2b5-3141-4a19-aa49-91ab7e5c211c,en
 Dominion Assault Force,TRK,194,normal,1,28a55f63-1cbd-4362-a192-e42a06f44686,en
 Dominion Infiltration,TRK,380,normal,1,09fbeced-90d7-4cfc-80ae-7b6226d95de5,en
-Dominion Supervisor,TRK,195,normal,1,5fa76320-24c0-4294-8ae4-fb39e171fbe6,en
 "Dori, Bearer of Friends",HOB,94,normal,1,d2f60ad0-c887-4585-85f8-afcf72fb80d0,en
 DOT-7 Repair Squad,TRK,12,normal,1,fca1528c-84cc-42d2-99ae-9f10f0e28743,en
 "Down, Down to Goblin-town",HOB,65,normal,1,b72e193c-e030-4936-9b79-c636eff750e1,en
@@ -378,7 +370,6 @@ Isolinear Processor,TRK,266,normal,1,8c1a2c13-5e36-4707-9d90-18c2e58a2b26,en
 Item Shopkeep,FIN,142,normal,1,bd2db3f5-fd0d-4817-af90-6bea1f07e16b,en
 "Jiang Yanggu, Alone",FRA,246,normal,1,e8c1ce21-b77d-40bf-9ed1-478604e71f5f,en
 "Jiang Yanggu, Never Alone",FRA,261,normal,1,f5a0bb3e-8119-4739-8684-e61d1d607dcb,en
-"Joshua, Phoenix's Dominant // Phoenix, Warden of Fire",FIN,229,normal,1,457fdbb9-5439-460f-8e37-176f8919362c,en
 Judge Magister Gabranth,FIN,230,normal,1,f9e64cb6-48f7-41d3-99e7-4b0bc3b33fd7,en
 K'un-Lun Warrior,MSH,140,normal,1,e6e8359d-12be-49be-8cbe-6a3b8506a9e6,en
 "Kain, Traitorous Dragoon",FIN,105,foil,1,f8c86be0-e1b3-4a78-9254-238dd936914b,en
@@ -447,7 +438,7 @@ Medic's Kitesail,FRA,173,foil,1,8b07409a-1dce-461d-95e4-1130521ff4c4,en
 Melkotian Adjudicator,TRK,73,normal,1,873c9933-7939-4376-873c-6a5b3bbc98d4,en
 Memory Trap,FRA,15,normal,1,2f5345ae-4489-4d05-b2d5-c71285254f05,en
 Mending Hands,9ED,29,normal,1,53709642-9d61-425f-9bcf-0c579404b521,en
-Mental Note,JUD,46,normal,4,1f343724-6ecd-494f-8bfc-93676af4e173,en
+Mental Note,JUD,46,normal,4,1f343724-6ecd-494f-8bfc-93676af4e173,fr
 Meticulous Commons,FRA,184,normal,1,93ac525e-1919-43dd-aba4-073b7e4c1768,en
 Might of Murasa,ZNR,194,normal,4,42914fd9-e56e-4c3e-a445-fdfa45a45178,en
 Mind Flayer,AFR,63,normal,1,c29ac797-a186-4224-94e1-9bb9dca4b029,en
@@ -468,7 +459,6 @@ Multiply by Zero,FRA,58,foil,1,90d684a4-9639-4792-8760-2011a7a85370,en
 Murasa Brute,ZNR,195,normal,3,efe1c5b2-4356-41ae-ab7e-ad9fc835a911,en
 Murdock's Crusade,MSH,24,foil,1,98df64ca-39c3-47e6-8143-4106c8e9cf59,en
 Murdock's Crusade,MSH,24,normal,1,98df64ca-39c3-47e6-8143-4106c8e9cf59,en
-My Precious // Allure of Power,HOB,176,normal,1,15ae4d50-be2f-412c-bb6b-b0a06b60474a,en
 Mysidian Elder,FIN,145,foil,1,6bc39af4-be19-4889-b930-df7ebf7b9481,en
 Namazu Trader,FIN,107,normal,1,f9d25b34-990d-416c-aef7-1b5a73f19dd4,en
 Nasty Little Rabbit,HOB,130,normal,2,96bc7d25-2828-478a-8fe5-a1f4ede8c9c0,en
@@ -493,7 +483,6 @@ Oltec Matterweaver,PW24,12,foil,1,63ecaef8-3a3f-4027-9692-9dae6f718aef,en
 "Omega, Heartless Evolution",FIN,347,normal,1,615f1a04-2ad4-443b-a915-2181a6bf13af,en
 "Omega, Heartless Evolution",FIN,236,normal,1,9a8eb7e6-0c0b-42d0-aa90-2d3d29bc15aa,en
 Opera Love Song,FIN,147,normal,1,0343916d-1b65-4e95-aef1-e72dbcebf0c4,en
-Oran-Rief Ooze,ZNR,198,normal,1,fd2ad967-dd77-4c3a-b53c-2929ecf7750f,en
 Ordinary Bear,HOB,133,normal,1,0feb9817-56e1-465a-851c-b2fe202aa8ae,en
 "Ori, Keeper of Songs",HOB,23,normal,4,c5727af5-a487-4b16-8278-81c3c928c417,en
 Outland Colossus,ORI,193,normal,1,1caad298-52cb-46f1-8212-fe657ab80159,en
@@ -506,7 +495,6 @@ Pariah,CN2,95,normal,2,51b2136c-392c-436d-9263-b3236adc4a10,en
 Part in Friendship,HOB,134,normal,1,b4ff1eac-6d97-40ab-9b7c-c2fdca0917d9,en
 Pathway Arrows,BFZ,225,normal,2,15b98611-a6f7-498c-87e3-893a3f4b4f73,en
 Patient Instructor,HOB,162,normal,3,e4800508-8bb9-41bb-8712-b55fba7a80a5,en
-Pattern Buffer Preservation,TRK,123,normal,1,23166580-9676-4025-916b-864568c2e59d,en
 Perils of the Past,TRK,161,normal,1,3df10e9a-efb6-4945-9b1b-29200688702a,en
 Pestermite,LRW,78,normal,1,f252ae53-443c-4a27-b8f0-639a9a2b8598,en
 Pestilence,USG,147,normal,4,2f1f5630-647f-4789-8506-e7fafcbdd671,en
@@ -567,14 +555,11 @@ Reflector Mage,OGW,157,normal,2,9473fe01-83f6-4432-ab01-f7953d2ca904,en
 Reno and Rude,FIN,113,normal,1,b5eb0064-c7c4-4e3e-add2-b86269de3fb9,en
 Repulsor Blast,MSH,150,normal,2,837265b0-fc15-4d96-9d6b-fd1c78534262,en
 "Rescue Girl, First Responder",FRA,202,normal,1,699874e3-1ccf-4a6c-8371-61040de82d08,en
-Resentful Revelation,FIN,114,foil,1,945006ea-c6a1-4ee5-abb2-387c2b6d3123,en
 Resentful Revelation,FIN,114,normal,2,945006ea-c6a1-4ee5-abb2-387c2b6d3123,en
-Restoration Magic,FIN,30,normal,1,494e68e9-ecba-4482-82bc-207ad59144c1,ja
 Restoration Magic,FIN,30,normal,1,494e68e9-ecba-4482-82bc-207ad59144c1,en
 Restorative Technique,MSH,183,normal,1,dbe9102d-b92b-4c32-93f6-5b6dc0fa08e6,en
 Reveille Squad,PCY,18,normal,4,8f6385bb-18f9-461b-b541-3c2a5e59189b,en
 Reverent Howl,HOB,81,normal,5,16765eb2-d497-4cd6-b683-20eac2f10bbf,en
-Ride the Shoopuf,FIN,197,normal,1,19ad36d6-8bf4-490c-9980-b98a470af892,en
 Ring of the Lucii,FIN,269,normal,1,75761f1e-9449-4c58-8265-8abac71dafc1,en
 Rinoa Heartilly,FIN,237,normal,1,ba79d293-bf42-48b6-a868-5249f4beeb76,en
 Rip-Clan Crasher,ALA,189,normal,1,8d61c4a0-054b-479e-82d9-dc60c5c708e2,en
@@ -620,7 +605,6 @@ Serra Angel,M14,32,normal,1,475f2a7b-9bd5-4ad7-868a-7652d06f3f6c,en
 "Setzer, Wandering Gambler",FIC,93,normal,1,5e3e5b0f-c702-4671-ad95-ab0cda1ab83d,en
 Shambling Vent,BFZ,244,normal,1,30a73816-1f33-4798-a9d6-5f0410d19625,en
 Shard Volley,MOR,103,normal,1,43db4810-078e-487a-afef-57cbc1db0cc7,en
-Shields Up!,TRK,35,foil,1,0b60c9af-8ea9-491d-a4a4-226a2143e7f3,en
 Shinra Reinforcements,FIN,118,normal,1,7367b257-1a8c-4593-a307-7116e36e0342,ja
 Shinra Reinforcements,FIN,118,normal,1,7367b257-1a8c-4593-a307-7116e36e0342,en
 Sidequest: Card Collection // Magicked Card,FIN,73,normal,1,8ac3d2c9-5978-4cfb-a746-c901decff093,en
@@ -644,7 +628,7 @@ Spatial Anomaly,TRK,296,foil,1,2f683f37-4291-410d-b179-ed6139c06877,en
 Spatial Contortion,OGW,8,normal,1,4e2acf70-7625-4b77-83c1-0e08436da31f,en
 Specter of the Fens,STX,87,normal,2,73e3cfbc-7177-4bbc-89c4-560c9c2f97db,en
 Sphinx's Approach,FRA,41,normal,1,f49be090-c745-40e5-bc1c-605b8d98acdf,en
-Spirit Loop,TSP,42,normal,2,31ffb2e6-b1bc-41c5-9e52-294c060b1d45,en
+Spirit Loop,TSP,42,normal,2,31ffb2e6-b1bc-41c5-9e52-294c060b1d45,fr
 "Spock, Always Your Friend",TRK,253,normal,1,1be731d5-8b21-4883-91c0-dd9070b1eadd,en
 Starfleet Spanner Jockey,TRK,81,normal,1,16bc9660-2bef-4926-b0e6-f49b22817bea,en
 Stark Industries Executive,MSH,153,foil,1,709ffd07-706c-471f-b74d-4637afa11686,en
@@ -653,7 +637,7 @@ Steadfast Guard,MMQ,50,normal,4,6381774b-fb91-46cc-9bf6-6eeb4d67a165,en
 "Sting, Bilbo's Sword",HOB,178,normal,1,d6a8d698-c454-42c4-ad4e-9a7625d5569f,en
 Stingerquill Annex,FRA,190,normal,1,6ede3143-69ac-4cbe-922a-d25b07c26da7,en
 Stingerquill Charm,FRA,150,normal,2,81733ff7-e611-43ee-bf38-6bb700676017,en
-Stinkweed Imp,RAV,107,normal,4,628903a0-6695-4643-80f3-9a6efc4d6a27,en
+Stinkweed Imp,RAV,107,normal,3,628903a0-6695-4643-80f3-9a6efc4d6a27,en
 Stir Up Trouble,HOB,84,foil,1,fd145e3a-c889-4390-accb-863dbcc845ce,en
 Stir Up Trouble,HOB,84,normal,2,fd145e3a-c889-4390-accb-863dbcc845ce,en
 Stolen Stark Tech,MSH,114,normal,2,db4557ad-4141-4dae-870e-a587506f4914,en
@@ -665,7 +649,6 @@ Storied Veteran,TRK,129,normal,1,3b80995c-8e9a-4a9c-8854-59439a58166f,en
 Stormfront Riders,PLC,20,normal,1,de5e892e-d321-436f-81a6-73975e65b45c,en
 Stray from History,TRK,130,normal,1,aac57a7f-a28b-486a-8d85-c620702a9cc0,en
 Strider Harness,OGW,167,normal,1,47c90f49-d1eb-420e-bfb6-b834a496860d,en
-Strixhaven Stadium,FCA,63†,normal,1,f10dfb1e-f0ae-42d8-92e1-717eba61efed,en
 Stuck in Summoner's Sanctum,FIN,76,foil,1,6678501e-6349-4e37-ab4c-a31a3d408d52,en
 Stun Sniper,DDL,7,normal,1,277bdef5-4887-42f5-b7c2-8c18f03db365,en
 Submerged Boneyard,OGW,178,normal,1,6479a246-21ac-490a-aefb-6ed72aabdb88,en
@@ -705,19 +688,15 @@ Tether Technician,FRA,94,normal,1,b75bbf46-a421-467a-9433-6cf22398a3a5,en
 "Tetsuko Umezawa, Fugitive",FRA,221,normal,1,3983d71e-3c23-4b36-b331-08e0707d8245,en
 "Tetsuko Umezawa, Pursuer",FRA,252,normal,1,df818900-ce5e-4b0d-a927-c975cbef7eda,en
 "Teyo, Diamondblade Mage",FRA,236,normal,1,100c3b67-0c92-4224-b5ed-67789c612df7,en
-"Teyo, Lightshield Expert",FRA,204,normal,1,5f7521d7-9f1f-4f03-b2ea-dd2a1b1e4e5b,en
 The Astonishing Ant-Man,MSH,204,normal,1,5d98073e-2828-4365-a8d6-f631aac0cca9,en
 The Chief Warg,HOB,150,normal,1,c397a298-bf7f-49d7-a26a-206ccf9e8120,en
 The Crystal's Chosen,FIN,14,normal,1,d4df4373-0ee6-44e3-81c6-0881c070014c,en
 The Darkness Crystal,FIN,96,normal,1,0f93b6ac-54ce-45d0-8549-19307406e6e5,en
-The Earth Crystal,FIN,184,normal,1,d585e218-3dc8-4fbd-8ad2-795fbc9b2155,en
 "The Falcon, Airship Restored",FIC,45,normal,1,080fc2be-d463-4e8e-ba42-8f3cb0c95ed3,en
 The Final Days,FIN,101,normal,1,bbf01770-6d0f-4015-b4b4-a74a53cb767a,en
-The Fire Crystal,FIN,337,normal,1,58306c68-5de8-48f4-9ce5-ea69792af58c,en
 The Gold Saucer,FIN,279,normal,1,5363c881-443d-43df-afd8-f81e1a1741a2,en
 The Kingpin of Crime,MSH,327,normal,1,1803564a-5ec5-4c0d-817c-5575127a3703,en
 The Masamune,FIN,264,normal,1,fc408575-8ef7-4043-b6b7-b38cef7c97d1,en
-The Mountain-king's Return,HOB,22,normal,1,68f4893d-e9a5-4f89-ade3-9ab78a834ad5,en
 The Naked Time,TRK,159,normal,1,627c2ff6-88be-4c37-a676-0eddf453e8c6,en
 The Prima Vista,FIN,64,normal,1,e3998132-5746-4dde-9529-97d3ad7d7361,en
 The Serpent Society,MSH,226,normal,1,209855ee-d531-4b58-926b-8da171d46619,en
@@ -761,7 +740,6 @@ Trespasser il-Vec,TSP,138,normal,4,4903171e-76b2-437d-8965-e871e47a3482,en
 Trickster's Stratagem,MSH,81,normal,3,620376d0-dc0c-405f-8121-eb36d9b4f4c2,en
 Tricorder,TRK,270,foil,1,3c872f02-80ac-49e3-a777-3526d35ad7cc,en
 Tricorder,TRK,270,normal,1,3c872f02-80ac-49e3-a777-3526d35ad7cc,en
-Troop of Ponies,HOB,3,normal,1,0b4b1c59-bcec-4779-9e27-0e6f9feb4e11,en
 Troubling Tribbles,TRK,41,foil,1,0af3e535-83e6-422b-85c5-39d830cb072c,en
 Twinned Vision,FRA,157,normal,2,55f85984-0137-4899-8993-bbc8c4794d33,en
 Twisted Fates,FRA,158,normal,1,c7c0765d-38fd-4d7b-bfb4-49b10ff5939b,en
@@ -801,7 +779,6 @@ Vibranium Energy Daggers,MSH,254,foil,1,4fe5952d-f50f-443a-b960-657fc4bc1965,en
 Vicious Rivalry,PSOS,241p,normal,1,60bc47ff-db7c-405e-92bc-ef14f7e9739c,en
 Vicious Shadows,ALA,119,normal,1,d040791e-eee4-4eef-ace1-507216a5d268,en
 Vigorbloom Annex,FRA,194,normal,1,db8c7bdd-76cd-4be0-ae0d-d430e9a5fe7a,en
-Vigorbloom Charm,FRA,160,normal,1,2b198e10-b507-4314-a29c-a219f06e48b7,en
 Vile Redeemer,OGW,125,normal,1,f48b0613-127a-4338-aea4-ad0b8aa96d77,en
 Vincent Valentine // Galian Beast,FIN,125,normal,1,028ef608-acfe-4e9d-90db-eca4411ba78a,ja
 Vincent's Limit Break,FIN,126,normal,1,0502c426-5271-4989-8598-5bc159afe79c,en
@@ -849,7 +826,7 @@ Wilderland Scrounger,HOB,141,normal,1,63078f42-f404-4c61-86be-45d934393b0a,en
 "Windurst, Federation Center",FIN,292,normal,1,c74024bd-b383-468d-9cf5-d112a29f6457,en
 "Winter, Tormented Loner",FRA,240,normal,1,9670f754-f41f-45ac-8e8b-025ad2c0f66b,en
 Witness the End,OGW,82,normal,1,0c06d8ec-55ab-4be9-a470-77c79d643d1f,en
-Wonder,JUD,54,normal,1,44670666-9028-4b4a-a5af-a3bf35fc6a21,en
+Wonder,JUD,54,normal,1,44670666-9028-4b4a-a5af-a3bf35fc6a21,fr
 Wood Elves,HOB,142,normal,1,2476e42b-b209-4207-8ed9-cb668f89b218,en
 Woodland Stream,AKH,287,normal,4,f8ff0f82-1326-479c-ba88-8cc85c56d883,en
 Woodland Wanderer,BFZ,198,normal,1,cc1e6db8-5093-44e4-95d7-3fdf8c55c1dd,en
@@ -862,17 +839,16 @@ Wrath of the Bloodmane,FRA,96,normal,3,b5b55617-684a-4036-be9b-a3b24fc9cd5a,en
 Xindi Surveyors,TRK,225,normal,1,803608aa-ae69-45d2-ae48-f1688d2a6a0d,en
 "Yargle, Glutton of Urborg",FRA,241,normal,1,04c816fb-5951-4db1-8834-ed3f0b36bfe1,en
 "Yargle, Goliath of Otaria",FRA,225,normal,1,f45ba926-6496-4bd4-96eb-663946d56bbf,en
-"Yoshimaru, Beloved Companion",FRA,209,normal,2,384f3b7d-8d7f-41bf-bebd-64e8babe7fca,en
+"Yoshimaru, Beloved Companion",FRA,209,normal,1,384f3b7d-8d7f-41bf-bebd-64e8babe7fca,en
 "Yoshimaru, Scrappy Stray",FRA,269,normal,1,b8dfd087-2434-42c6-ac4c-1decbcdde2db,en
 You're Not Alone,FIN,44,foil,1,1867b5cb-2bb0-4f49-b302-036fdffa2344,en
 You're Not Alone,FIN,44,normal,3,1867b5cb-2bb0-4f49-b302-036fdffa2344,en
 Your Fate Ends Here,FRA,24,normal,2,25000a17-b701-4d69-b2ef-2c74029199d3,en
 "Yuriko, Blade of the Mighty",FRA,210,normal,1,ccbe92a5-42bc-4228-9d5a-212df2f5dc15,en
 "Yuriko, Hope from the Shadows",FRA,226,normal,1,45e81487-8b8c-480b-922a-eaa9edc7201d,en
-Zack Fair,FIN,45,normal,1,f21f9161-5945-40da-8da0-446f6a4a1c23,en
 Zealot il-Vec,TSP,47,normal,3,3a2a2740-68cb-48c9-9716-081d369075e0,en
 Zell Dincht,FIN,170,normal,1,135d6b27-9168-4513-9d7d-56edae048857,en
 Zendikar Resurgent,OGW,147,normal,1,67f02bc3-b565-4a38-8313-eb47ff31db8d,en
 "Zero, Incorporeal Sensate",TRK,258,normal,1,93f616fe-6906-4e5d-b9fe-b432cccdb0ec,en
 "Zidane, Tantalus Thief",FIN,251,normal,1,e42c7d9d-8685-415b-8c5d-6ab2165863b9,en
-Zombie Infestation,ODY,170,normal,3,ccd5f98a-7ab5-44b3-850c-b50963dace66,en
+Zombie Infestation,ODY,170,normal,2,ccd5f98a-7ab5-44b3-850c-b50963dace66,fr
